@@ -1,0 +1,432 @@
+.Home{
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.HomeHeader{
+    width: 1328px;
+    height: 76px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.HomeHeaderSearch{
+    width: 318px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+.HomeHeaderSearch .SearchOut{
+    width: 275px;
+    height: 100%;
+    padding-left: 20px;
+    border: none;
+}
+.HomeHeaderNewItem{
+    width: 103px;
+    height: 40px;
+}
+.NewItem{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+.HomeContent{
+    width: 1328px;
+    height: 816px;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+.ToDo{
+    height: 100%;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    background-color:chartreuse;
+    align-items: center;
+}
+.ToDo_Header{
+    height: 56px;
+    width: 286px;
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.ToDo_Header_Left{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ToDo_Header_Left_Text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.ToDo_Header_Left_Posts{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.ToDo_Header_Right{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ToDo_Header_Right_Plus{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.ToDo_Header_Right_Ai{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.ToDo_Content{
+    width: 286px;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*.ToDo_Content_MobileWireframes{
+    width: 100%;
+    height: 192px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+.ToDo_MobileWireframes_Up{
+    width: 262px;
+    height: 152px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+    border-bottom: 1px solid black;
+    background-color: burlywood;
+}
+.ToDo_MobileWireframes_Up_Title{
+    width: 262px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ToDo_MobileWireframes_Up_Description{
+    width: 262px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+}
+.ToDo_MobileWireframes_Up_MindX{
+    width: 118px;
+    height: 26px;
+
+}
+.ToDo_MobileWireframes_Up_MindX button{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #0013FE;
+    color: white;
+    border: none;
+}
+.ToDo_MobileWireframes_Down{
+    width: 262px;
+    height: 40px;
+    display: flex;
+    padding: 8px 12px 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.ToDo_MobileWireframes_Down_Paperclip{
+    width: 35px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.ToDo_MobileWireframes_Down_RedFlag{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ToDo_MobileWireframes_Down_Clock{
+    width: 71px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+} */
+.InProgress{
+    height: 100%;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    background-color:chartreuse;
+    align-items: center;
+}
+.InProgress_Header{
+    height: 56px;
+    width: 286px;
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.InProgress_Header_Left{
+    width: 129px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.InProgress_Header_Left_Text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.InProgress_Header_Left_Posts{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InProgress_Header_Right{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.InProgress_Header_Right_Plus{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InProgress_Header_Right_Ai{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InProgress_Content{
+    width: 286px;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.InReview{
+    height: 100%;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    background-color:chartreuse;
+    align-items: center;
+}
+.InReview_Header{
+    height: 56px;
+    width: 286px;
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.InReview_Header_Left{
+    width: 129px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.InReview_Header_Left_Text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.InReview_Header_Left_Posts{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InReview_Header_Right{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.InReview_Header_Right_Plus{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InReview_Header_Right_Ai{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.InReview_Content{
+    width: 286px;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Done{
+    height: 100%;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    background-color:chartreuse;
+    align-items: center;
+}
+.Done_Header{
+    height: 56px;
+    width: 286px;
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.Done_Header_Left{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.Done_Header_Left_Text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.Done_Header_Left_Posts{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.Done_Header_Right{
+    width: 88px;
+    height: 30px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Done_Header_Right_Plus{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.Done_Header_Right_Ai{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    background-color:blue;
+    justify-content: center;
+}
+.Done_Content{
+    width: 286px;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
