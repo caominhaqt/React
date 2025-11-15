@@ -7,11 +7,11 @@ import { useState } from 'react';
 import Savetask from '../Savetask/Savetask';
 const Home = () => {
     // Dữ liệu người dùng
-    const users = [
-        { userId: 1, name: "Nguyễn Văn A" },
-        { userId: 2, name: "Trịnh Hồng M" },
-        { userId: 3, name: "Lạc Khôi B" }
-    ];
+    // const users = [
+    //     { userId: 1, name: "Nguyễn Văn A" },
+    //     { userId: 2, name: "Trịnh Hồng M" },
+    //     { userId: 3, name: "Lạc Khôi B" }
+    // ];
 
     // Dữ liệu trạng thái công việc
     const taskStatus = [
@@ -36,7 +36,7 @@ const Home = () => {
             description: "Lên bố cục ứng dụng thích nghi cho Mobile.",
             statusId: 1, // To Do
             flagId: 2, // Medium
-            assignedTo: 1, // userId
+            assignedName: "Nguyễn Văn A", // userId
             deadline: new Date("2024-04-12")
         },
         {
@@ -45,7 +45,7 @@ const Home = () => {
             description: "Thực hiện nghiên cứu người dùng để hiểu rõ nhu cầu.",
             statusId: 2, // In Progress
             flagId: 3, // High
-            assignedTo: 2, // userId
+            assignedName: "Trịnh Hồng M", // userId
             deadline: new Date("2024-03-04")
         },
         {
@@ -54,7 +54,7 @@ const Home = () => {
             description: "Cuộc họp trực tuyến với khách hàng để thảo luận về dự án.",
             statusId: 1, // To Do
             flagId: 1, // Low
-            assignedTo: 3, // userId
+            assignedName: "Lạc Khôi B", // userId
             deadline: new Date("2024-04-02")
         },
         {
@@ -63,7 +63,7 @@ const Home = () => {
             description: "Chuẩn bị bài thuyết trình hàng năm với số liệu và biểu đồ.",
             statusId: 3, // In Review
             flagId: 2, // Medium
-            assignedTo: 1, // userId
+            assignedName: "Nguyễn Văn A", // userId
             deadline: new Date("2024-03-15")
         },
         {
@@ -72,7 +72,7 @@ const Home = () => {
             description: "Thiết kế các màn hình hướng dẫn ban đầu cho ứng dụng.",
             statusId: 4, // Done
             flagId: 1, // Low
-            assignedTo: 2, // userId
+            assignedName: "Trịnh Hồng M", // userId
             deadline: new Date("2024-03-17")
         },
         {
@@ -81,7 +81,7 @@ const Home = () => {
             description: "Thiết kế giao diện cho trang Landing Page mới.",
             statusId: 2, // In Progress
             flagId: 2, // Medium
-            assignedTo: 3, // userId
+            assignedName: "Lạc Khôi B", // userId
             deadline: new Date("2024-04-05")
         },
         {
@@ -90,7 +90,7 @@ const Home = () => {
             description: "Lập kế hoạch chiến lược tiếp thị cho sản phẩm mới.",
             statusId: 1, // To Do
             flagId: 3, // High
-            assignedTo: 1, // userId
+            assignedName: "Nguyễn Văn A", // userId
             deadline: new Date("2024-04-20")
         },
         {
@@ -99,7 +99,7 @@ const Home = () => {
             description: "Sửa các lỗi phát hiện trong phiên bản beta.",
             statusId: 3, // In Review
             flagId: 3, // High
-            assignedTo: 2, // userId
+            assignedName: "Trịnh Hồng M", // userId
             deadline: new Date("2024-03-25")
         },
         {
@@ -108,7 +108,7 @@ const Home = () => {
             description: "Viết nội dung cho blog công ty và bài đăng mạng xã hội.",
             statusId: 2, // In Progress
             flagId: 1, // Low
-            assignedTo: 3, // userId
+            assignedName: "Lạc Khôi B", // userId
             deadline: new Date("2024-04-10")
         },
         {
@@ -117,7 +117,7 @@ const Home = () => {
             description: "Họp nhóm để thảo luận tiến độ và các vấn đề phát sinh.",
             statusId: 4, // Done
             flagId: 2, // Medium
-            assignedTo: 1, // userId
+            assignedName: "Nguyễn Văn A", // userId
             deadline: new Date("2024-03-18")
         }
     ];
@@ -157,8 +157,9 @@ const Home = () => {
                                         title={task.title}
                                         description={task.description}
                                         deadline={task.deadline}
-                                    // flag={flags.find(f => f.flagId === task.flagId)}
-                                    // user={users.find(u => u.userId === task.assignedTo)}
+                                        // flag={flags.find(f => f.flagId === task.flagId)}
+                                        user={task.assignedName}
+
                                     />
                                 ))
                         }
@@ -185,14 +186,14 @@ const Home = () => {
                                         title={task.title}
                                         description={task.description}
                                         deadline={task.deadline}
-                                    // flag={flags.find(f => f.flagId === task.flagId)}
-                                    // user={users.find(u => u.userId === task.assignedTo)}
+                                        // flag={flags.find(f => f.flagId === task.flagId)}
+                                        user={task.assignedName}
                                     />
                                 ))
                         }
                     </div>
                 </div>
-                
+
                 <div className='InReview'>
                     <div className='InReview_Header'>
                         <div className='InReview_Header_Left'>
@@ -214,8 +215,8 @@ const Home = () => {
                                         title={task.title}
                                         description={task.description}
                                         deadline={task.deadline}
-                                    // flag={flags.find(f => f.flagId === task.flagId)}
-                                    // user={users.find(u => u.userId === task.assignedTo)}
+                                        // flag={flags.find(f => f.flagId === task.flagId)}
+                                        user={task.assignedName}
                                     />
                                 ))
                         }
@@ -242,15 +243,15 @@ const Home = () => {
                                         title={task.title}
                                         description={task.description}
                                         deadline={task.deadline}
-                                    // flag={flags.find(f => f.flagId === task.flagId)}
-                                    // user={users.find(u => u.userId === task.assignedTo)}
+                                        // flag={flags.find(f => f.flagId === task.flagId)}
+                                        user={task.assignedName}
                                     />
                                 ))
                         }
                     </div>
                 </div>
             </div>
-            {found === true && <Savetask></Savetask>}
+            {found === true && <Savetask setFound={setFound}></Savetask>}
         </div>
     )
 }

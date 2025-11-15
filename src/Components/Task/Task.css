@@ -2,7 +2,7 @@
 .ToDo_Content_MobileWireframes{
     width: 100%;
     height: 192px;
-    background-color: bisque;
+    /* background-color: bisque; */
     display: flex;
     flex-direction: column;
 }
@@ -14,7 +14,7 @@
     padding: 12px;
     gap: 12px;
     border-bottom: 1px solid black;
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 .ToDo_MobileWireframes_Up_Title{
     width: 262px;

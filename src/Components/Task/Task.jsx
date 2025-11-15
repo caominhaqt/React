@@ -5,6 +5,7 @@ import PaperClip from '../Icon/PaperClip'
 import RedFlag from '../Icon/RedFlag'
 import Clock from '../Icon/Clock'
 const Task = (props) => {
+    console.log(props.assignedName)
     return (
         
             <div className='ToDo_Content_MobileWireframes'>
@@ -17,8 +18,9 @@ const Task = (props) => {
                         <p>{props.description}</p>
                     </div>
                     <div className='ToDo_MobileWireframes_Up_MindX'>
-                        <button>MindX School</button>
+                        <button>{props.user}</button>
                     </div>
+                    
                 </div>
                 <div className='ToDo_MobileWireframes_Down'>
                     <div className='ToDo_MobileWireframes_Down_Paperclip'>
