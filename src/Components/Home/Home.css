@@ -91,6 +91,7 @@
     align-items: center;
     border-radius: 50%;
     background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .ToDo_Header_Right{
@@ -108,6 +109,7 @@
     align-items: center;
     border-radius: 50%;
     background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .ToDo_Header_Right_Ai{
@@ -117,6 +119,7 @@
     align-items: center;
     border-radius: 50%;
     background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .ToDo_Content{
@@ -166,7 +169,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InProgress_Header_Right{
@@ -183,7 +187,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InProgress_Header_Right_Ai{
@@ -192,7 +197,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InProgress_Content{
@@ -241,7 +247,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InReview_Header_Right{
@@ -258,7 +265,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InReview_Header_Right_Ai{
@@ -267,7 +275,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .InReview_Content{
@@ -317,7 +326,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .Done_Header_Right{
@@ -334,7 +344,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .Done_Header_Right_Ai{
@@ -343,7 +354,8 @@
     display: flex;
     align-items: center;
     border-radius: 50%;
-    /* background-color:blue; */
+    background-color:blue;
+    color: whitesmoke;
     justify-content: center;
 }
 .Done_Content{

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useState } from 'react'
 import './Savetask.css'
 import GreenFlag from '../Icon/GreenFlag'
 import X from '../Icon/X'
@@ -6,8 +6,25 @@ import { Select } from 'antd';
 const Savetask = (props) => {
 
   const HandleCancel = () => {
-   props.setFound(false)
+    props.setFound(false)
   }
+
+  const [title, settitle] = useState('') // lưu dữ liệu người dùng nhập title
+  const [description, setdescription] = useState('')
+  //
+  const handleSave = () => {
+
+    const new_task = {
+      taskId: Math.floor(Math.random() * 10000000),
+      title: title,
+      statusId: 1
+      ///
+
+    }
+    props.addTask(new_task)
+    props.setFound(false)
+  }
+
 
   return (
     <>
@@ -19,7 +36,7 @@ const Savetask = (props) => {
               <GreenFlag></GreenFlag>
             </div>
             <div className='Savetask_Header_X'>
-              <X setFound = {props.setFound}></X>
+              <X setFound={props.setFound}></X>
             </div>
             <div className='Savetask_Header_Text'>
               <p>Save Task</p>
@@ -29,7 +46,9 @@ const Savetask = (props) => {
             <div className='Savetask_Title_Left'>
               <div className='Title_Left_Text'>Title<span style={{ color: 'red' }}>*</span></div>
               <div className='Title_Left_Input'>
-                <input type="text" placeholder="Type Title of Task" />
+                <input type="text" placeholder="Type Title of Task"
+                  onChange={(e) => { settitle(e.target.value) }}
+                />
               </div>
               <div className='Title_Left_Warn'>
                 <span style={{ color: 'red' }}>Title is required</span>
@@ -93,7 +112,7 @@ const Savetask = (props) => {
               <button onClick={HandleCancel}>Cancel</button>
             </div>
             <div className='Save'>
-              <button>Save</button>
+              <button onClick={ handleSave}>Save</button>
             </div>
           </div>
         </div>
