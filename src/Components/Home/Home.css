@@ -53,7 +53,8 @@
     /* background-color: aqua; */
 }
 .ToDo{
-    height: 100%;
+    height: fit-content;
+    min-height: 100%;
     width: 318px;
     display: flex;
     flex-direction: column;

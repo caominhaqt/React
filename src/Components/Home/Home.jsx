@@ -7,11 +7,11 @@ import { useState } from 'react';
 import Savetask from '../Savetask/Savetask';
 const Home = () => {
     // Dữ liệu người dùng
-    // const users = [
-    //     { userId: 1, name: "Nguyễn Văn A" },
-    //     { userId: 2, name: "Trịnh Hồng M" },
-    //     { userId: 3, name: "Lạc Khôi B" }
-    // ];
+    const users = [
+        { userId: 1, name: "Nguyễn Văn A" },
+        { userId: 2, name: "Trịnh Hồng M" },
+        { userId: 3, name: "Lạc Khôi B" }
+    ];
 
     // Dữ liệu trạng thái công việc
     const taskStatus = [
@@ -38,7 +38,7 @@ const Home = () => {
                 statusId: 1, // To Do
                 flagId: 2, // Medium
                 assignedName: "Nguyễn Văn A", // userId
-                deadline: new Date("2024-04-12")
+                endDate: new Date("2024-04-12")
             },
             {
                 taskId: 2,
@@ -47,7 +47,7 @@ const Home = () => {
                 statusId: 2, // In Progress
                 flagId: 3, // High
                 assignedName: "Trịnh Hồng M", // userId
-                deadline: new Date("2024-03-04")
+                endDate: new Date("2024-03-04")
             },
             {
                 taskId: 3,
@@ -56,7 +56,7 @@ const Home = () => {
                 statusId: 1, // To Do
                 flagId: 1, // Low
                 assignedName: "Lạc Khôi B", // userId
-                deadline: new Date("2024-04-02")
+                endDate: new Date("2024-04-02")
             },
             {
                 taskId: 4,
@@ -65,7 +65,7 @@ const Home = () => {
                 statusId: 3, // In Review
                 flagId: 2, // Medium
                 assignedName: "Nguyễn Văn A", // userId
-                deadline: new Date("2024-03-15")
+                endDate: new Date("2024-03-15")
             },
             {
                 taskId: 5,
@@ -74,7 +74,7 @@ const Home = () => {
                 statusId: 4, // Done
                 flagId: 1, // Low
                 assignedName: "Trịnh Hồng M", // userId
-                deadline: new Date("2024-03-17")
+                endDate: new Date("2024-03-17")
             },
             {
                 taskId: 6,
@@ -83,7 +83,7 @@ const Home = () => {
                 statusId: 2, // In Progress
                 flagId: 2, // Medium
                 assignedName: "Lạc Khôi B", // userId
-                deadline: new Date("2024-04-05")
+                endDate: new Date("2024-04-05")
             },
             {
                 taskId: 7,
@@ -92,7 +92,7 @@ const Home = () => {
                 statusId: 1, // To Do
                 flagId: 3, // High
                 assignedName: "Nguyễn Văn A", // userId
-                deadline: new Date("2024-04-20")
+                endDate: new Date("2024-04-20")
             },
             {
                 taskId: 8,
@@ -101,7 +101,7 @@ const Home = () => {
                 statusId: 3, // In Review
                 flagId: 3, // High
                 assignedName: "Trịnh Hồng M", // userId
-                deadline: new Date("2024-03-25")
+                endDate: new Date("2024-03-25")
             },
             {
                 taskId: 9,
@@ -110,7 +110,7 @@ const Home = () => {
                 statusId: 2, // In Progress
                 flagId: 1, // Low
                 assignedName: "Lạc Khôi B", // userId
-                deadline: new Date("2024-04-10")
+                endDate: new Date("2024-04-10")
             },
             {
                 taskId: 10,
@@ -119,7 +119,7 @@ const Home = () => {
                 statusId: 4, // Done
                 flagId: 2, // Medium
                 assignedName: "Nguyễn Văn A", // userId
-                deadline: new Date("2024-03-18")
+                endDate: new Date("2024-03-18")
             }
 
         ]
@@ -128,7 +128,13 @@ const Home = () => {
     const handlenewitem = () => {
         setFound(!found)
     }
-
+    const [statusId, setStatus] = useState(null);
+    const handleStatus = (statusId) => {
+        if (statusId == 1) {
+            task_todo = tasks.filter(task => task.statusId === 1)
+            setStatus(statusId)
+        }
+    }
     let task_todo = tasks.filter(task => task.statusId === 1)
     let task_inprogress = tasks.filter(task => task.statusId === 2)
     let task_inreview = tasks.filter(task => task.statusId === 3)
@@ -139,7 +145,7 @@ const Home = () => {
     const addTask = (data) => {
         const new_tasks = [...tasks, data]
         setTasks(new_tasks)
-        console.log(new_tasks)
+        // console.log(new_tasks)
     }
     return (
         <div className='Home'>
@@ -174,7 +180,7 @@ const Home = () => {
                                     deadline={task.deadline}
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
-
+                                    endDate={task.endDate}
                                 />
                             ))
                         }
@@ -202,6 +208,7 @@ const Home = () => {
                                     deadline={task.deadline}
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
+                                    endDate={task.endDate}
                                 />
                             ))
                         }
@@ -229,6 +236,7 @@ const Home = () => {
                                     deadline={task.deadline}
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
+                                    endDate={task.endDate}
                                 />
                             ))
                         }
@@ -256,6 +264,7 @@ const Home = () => {
                                     deadline={task.deadline}
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
+                                    endDate={task.endDate}
                                 />
                             ))
                         }

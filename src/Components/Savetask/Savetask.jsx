@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
 import './Savetask.css'
 import GreenFlag from '../Icon/GreenFlag'
 import X from '../Icon/X'
@@ -11,16 +11,23 @@ const Savetask = (props) => {
 
   const [title, settitle] = useState('') // lưu dữ liệu người dùng nhập title
   const [description, setdescription] = useState('')
+  const [assignedName, setassignedName] = useState('')
+  const [statusId, setstatusId] = useState('')
+  const [endDate, setendDate] = useState('')
   //
   const handleSave = () => {
 
     const new_task = {
       taskId: Math.floor(Math.random() * 10000000),
       title: title,
-      statusId: 1
+      description: description,
+      assignedName: assignedName,
+      statusId: statusId,
+      endDate: endDate
       ///
 
     }
+
     props.addTask(new_task)
     props.setFound(false)
   }
@@ -57,7 +64,9 @@ const Savetask = (props) => {
             <div className='Savetask_Title_Right'>
               <div className='Title_Right_Text'>End Date</div>
               <div className='Title_Right_Date'>
-                <input type="date" />
+                <input type="date"
+                  value={endDate}
+                  onChange={(e) => setendDate(e.target.value)} />
               </div>
             </div>
           </div>
@@ -67,7 +76,9 @@ const Savetask = (props) => {
                 Description
               </div>
               <div className='Description_Left_Input'>
-                <input type="text" placeholder='Type Description' />
+                <input type="text" placeholder='Type Description'
+                  onChange={(e) => { setdescription(e.target.value) }} // trả event
+                />
               </div>
             </div>
             <div className='Savetask_Description_Right'>
@@ -81,10 +92,11 @@ const Savetask = (props) => {
                     (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                   }
                   options={[
-                    { value: '1', label: 'Jack' },
-                    { value: '2', label: 'Lucy' },
-                    { value: '3', label: 'Tom' },
+                    { value: 'Nguyễn Văn A', label: 'Nguyễn Văn A' },
+                    { value: 'Lạc Khôi B', label: 'Lạc Khôi B' },
+                    { value: 'Trịnh Hồng M', label: 'Trịnh Hồng M' },
                   ]}
+                  onChange={(value) => { setassignedName(value) }} //select có value luôn nên trả thẳng value, không phải event
                 />
 
               </div>
@@ -100,19 +112,21 @@ const Savetask = (props) => {
                   (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                 }
                 options={[
-                  { value: '1', label: '1' },
-                  { value: '2', label: '2' },
-                  { value: '3', label: '3' },
+                  { value: 1, label: '1(To Do)' },
+                  { value: 2, label: '2(In Progress)' },
+                  { value: 3, label: '3(In Review)' },
+                  { value: 4, label: '4(Done)' },
                 ]}
+                onChange={(value) => { setstatusId(value) }}
               />
             </div>
           </div>
           <div className='Savetask_Button'>
             <div className='Cancel'>
-              <button onClick={HandleCancel}>Cancel</button>
+              <button onClick={HandleCancel} >Cancel</button>
             </div>
             <div className='Save'>
-              <button onClick={ handleSave}>Save</button>
+              <button onClick={handleSave}>Save</button>
             </div>
           </div>
         </div>
