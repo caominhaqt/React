@@ -6,14 +6,14 @@ import RedFlag from '../Icon/RedFlag'
 import Clock from '../Icon/Clock'
 const Task = (props) => {
     
-    const formatDate = (date) => {
-        if (!date) return "";
+    const formatDate = (date) => { // hàm định dạng ngày tháng
+        if (!date) return ""; // kiểm tra nếu date rỗng trả về chuỗi rỗng
 
-        const d = new Date(date);
-        const month = d.toLocaleString("en-US", { month: "short" });
-        const day = d.getDate();
+        const d = new Date(date); // tạo đối tượng Date từ chuỗi date
+        const month = d.toLocaleString("en-US", { month: "short" });  // lấy tháng dưới dạng chuỗi viết tắt
+        const day = d.getDate(); // lấy ngày trong tháng
 
-        return `${month} ${day}`;
+        return `${month} ${day}`; // trả về chuỗi định dạng "Mon DD" 
     };
     
     console.log(props.assignedName)
@@ -43,7 +43,7 @@ const Task = (props) => {
                 </div>
                 <div className='ToDo_MobileWireframes_Down_Clock'>
                     <Clock></Clock>
-                    <p>{formatDate(props.endDate)}</p>
+                    <p>{formatDate(props.endDate)}</p> // định dạng ngày tháng cho endDate
                 </div>
             </div>
         </div>

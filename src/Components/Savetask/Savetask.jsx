@@ -29,8 +29,9 @@ const Savetask = (props) => {
 
     }
 
-    props.addTask(new_task)
-    props.setFound(false)
+    props.addTask(new_task) // gọi hàm addTask từ props truyền vào và truyền dữ liệu công việc mới
+    props.setFound(false) //
+
   }
 
 
@@ -90,7 +91,7 @@ const Savetask = (props) => {
                   showSearch
                   placeholder="Select a person"
                   filterOption={(input, option) =>
-                    (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                    (option?.label ?? '').toLowerCase().includes(input.toLowerCase()) // tìm kiếm không phân biệt hoa thường
                   }
                   options={[
                     { value: 'Nguyễn Văn A', label: 'Nguyễn Văn A' },

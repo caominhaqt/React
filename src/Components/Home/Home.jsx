@@ -125,28 +125,28 @@ const Home = () => {
 
         ]
     )
-    const [found, setFound] = useState(false)
+    const [found, setFound] = useState(false) // trạng thái hiển thị của modal thêm công việc
     const handlenewitem = () => {
         setFound(!found)
     }
 
-    let task_todo = tasks.filter(task => task.statusId === 1)
-    let task_inprogress = tasks.filter(task => task.statusId === 2)
-    let task_inreview = tasks.filter(task => task.statusId === 3)
-    let task_done = tasks.filter(task => task.statusId === 4)
+    let task_todo = tasks.filter(task => task.statusId === 1) // lọc các task có trạng thái To Do
+    let task_inprogress = tasks.filter(task => task.statusId === 2) // lọc các task có trạng thái In Progress
+    let task_inreview = tasks.filter(task => task.statusId === 3) // lọc các task có trạng thái In Review
+    let task_done = tasks.filter(task => task.statusId === 4) // lọc các task có trạng thái Done
 
     //
 
-    const addTask = (data) => {
-        const new_tasks = [...tasks, data]
-        setTasks(new_tasks)
+    const addTask = (data) => { // hàm AddTask nhận dữ liệu công việc mới từ component Savetask
+        const new_tasks = [...tasks, data] // Tạo một mảng mới bao gồm các công việc hiện tại và công việc mới
+        setTasks(new_tasks) // Cập nhật trạng thái tasks với mảng mới
         // console.log(new_tasks)
     }
     return (
         <div className='Home'>
             <div className='HomeHeader'>
                 <div className='HomeHeaderSearch'>
-                    <Input size="large" placeholder="Search Item" prefix={<SearchOut />} />
+                    <Input size="large" placeholder="Search Item" prefix={<SearchOut />} /> 
                 </div>
                 <div className='HomeHeaderNewItem'>
                     <button className='NewItem' onClick={handlenewitem}>New Item</button>
@@ -158,6 +158,7 @@ const Home = () => {
                         <div className='ToDo_Header_Left'>
                             <div className='ToDo_Header_Left_Text'>To do</div>
                             <div className='ToDo_Header_Left_Posts'>{task_todo.length}</div>
+                            {/* task_todo.length đếm số lượng công việc trong trạng thái To Do */}
                         </div>
                         <div className='ToDo_Header_Right'>
                             <div className='ToDo_Header_Right_Plus'>+</div>
@@ -167,7 +168,7 @@ const Home = () => {
                     <div className='ToDo_Content'>
                         {
 
-                            task_todo.map(task => (
+                            task_todo.map(task => ( // duyệt qua mảng task_todo và hiển thị từng công việc
                                 <Task
                                     key={task.taskId}
                                     title={task.title}
@@ -187,6 +188,7 @@ const Home = () => {
                         <div className='InProgress_Header_Left'>
                             <div className='InProgress_Header_Left_Text'>In Progress</div>
                             <div className='InProgress_Header_Left_Posts'>{task_inprogress.length}</div>
+                            {/* task_inprogress.length đếm số lượng công việc trong trạng thái In Progress */}
                         </div>
                         <div className='InProgress_Header_Right'>
                             <div className='InProgress_Header_Right_Plus'>+</div>
@@ -196,7 +198,7 @@ const Home = () => {
                     <div className='InProgress_Content'>
                         {
                             // lọc các task có trạng thái To Do
-                            task_inprogress.map(task => (
+                            task_inprogress.map(task => (   // duyệt qua mảng task_inprogress và hiển thị từng công việc
                                 <Task
                                     key={task.taskId}
                                     title={task.title}
@@ -272,6 +274,7 @@ const Home = () => {
                 </div>
             </div>
             {found === true && <Savetask setFound={setFound} addTask={addTask} ></Savetask>}
+            {/* truyền props setFound và addTask cho component Savetask */}
         </div>
     )
 }
