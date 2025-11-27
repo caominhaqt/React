@@ -5,6 +5,7 @@ import PaperClip from '../Icon/PaperClip'
 import RedFlag from '../Icon/RedFlag'
 import Clock from '../Icon/Clock'
 const Task = (props) => {
+    
     const formatDate = (date) => {
         if (!date) return "";
 
@@ -14,7 +15,7 @@ const Task = (props) => {
 
         return `${month} ${day}`;
     };
-
+    
     console.log(props.assignedName)
     return (
 
@@ -22,7 +23,7 @@ const Task = (props) => {
             <div className='ToDo_MobileWireframes_Up'>
                 <div className='ToDo_MobileWireframes_Up_Title'>
                     <p>{props.title}</p>
-                    <EditOutlined></EditOutlined>
+                    <EditOutlined  setFound = {props.setFound}></EditOutlined>
                 </div>
                 <div className='ToDo_MobileWireframes_Up_Description'>
                     <p>{props.description}</p>

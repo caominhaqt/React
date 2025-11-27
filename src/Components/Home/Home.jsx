@@ -5,6 +5,7 @@ import Task from '../Task/Task'
 import { Input } from 'antd';
 import { useState } from 'react';
 import Savetask from '../Savetask/Savetask';
+
 const Home = () => {
     // Dữ liệu người dùng
     const users = [
@@ -128,13 +129,7 @@ const Home = () => {
     const handlenewitem = () => {
         setFound(!found)
     }
-    const [statusId, setStatus] = useState(null);
-    const handleStatus = (statusId) => {
-        if (statusId == 1) {
-            task_todo = tasks.filter(task => task.statusId === 1)
-            setStatus(statusId)
-        }
-    }
+
     let task_todo = tasks.filter(task => task.statusId === 1)
     let task_inprogress = tasks.filter(task => task.statusId === 2)
     let task_inreview = tasks.filter(task => task.statusId === 3)
@@ -181,6 +176,7 @@ const Home = () => {
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
                                     endDate={task.endDate}
+                                    setFound={setFound}
                                 />
                             ))
                         }
@@ -209,6 +205,7 @@ const Home = () => {
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
                                     endDate={task.endDate}
+                                    setFound={setFound}
                                 />
                             ))
                         }
@@ -237,6 +234,7 @@ const Home = () => {
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
                                     endDate={task.endDate}
+                                    setFound={setFound}
                                 />
                             ))
                         }
@@ -258,6 +256,7 @@ const Home = () => {
 
                             task_done.map(task => (
                                 <Task
+                                    setFound={setFound}
                                     key={task.taskId}
                                     title={task.title}
                                     description={task.description}
@@ -265,14 +264,15 @@ const Home = () => {
                                     // flag={flags.find(f => f.flagId === task.flagId)}
                                     user={task.assignedName}
                                     endDate={task.endDate}
+
                                 />
                             ))
                         }
                     </div>
                 </div>
             </div>
-            {found === true && <Savetask setFound={setFound} addTask = {addTask}></Savetask>}
-        </div> 
+            {found === true && <Savetask setFound={setFound} addTask={addTask} ></Savetask>}
+        </div>
     )
 }
 
