@@ -1,0 +1,250 @@
+.Savetask_Box {
+    width: 100%;
+    height: 100vh;
+    background-color: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Savetask_Box_print {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.5;
+}
+
+
+.Savetask {
+    width: 50%;
+    min-height: 60%;
+    background-color: white;
+    z-index: 41;
+    display: flex;
+    flex-direction: column;
+    /* padding         : 1em; */
+    gap: 1.5em;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.Savetask_Header {
+    height: 100px;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    padding: 24px 24px 0px 24px;
+    position: relative;
+    box-sizing: border-box;
+    /* background-color: beige; */
+}
+
+.Savetask_Header_Greenflag {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black
+}
+
+.Savetask_Header_X {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    display: flex;
+    top: 24px;
+    right: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Savetask_Header_X:hover {
+    cursor: pointer;
+}
+
+.Savetask_Header_Text {
+    height: 30px;
+    width: 90px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.Savetask_Title {
+    height: 96px;
+    width: 586px;
+    /* background-color: aliceblue; */
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.Savetask_Title_Left {
+    height: 100%;
+    width: 407px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Title_Left_Text {
+    height: 20px;
+    width: 45px;
+}
+
+.Title_Left_Input {
+    width: 407px;
+    height: 44px;
+}
+
+.Title_Left_Input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    justify-content: center;
+    display: flex;
+    padding-left: 10px;
+}
+
+.Savetask_Title_Right {
+    height: 70px;
+    width: 163px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Title_Right_Text {
+    width: 61px;
+    height: 20px;
+}
+
+.Title_Right_Date {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Title_Right_Date input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.Savetask_Description {
+    width: 586px;
+    height: 106px;
+    /* background-color: aliceblue; */
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.Savetask_Description_Left {
+    width: 407px;
+    height: 106px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Description_Left_Text {
+    width: 61px;
+    height: 20px;
+}
+
+.Description_Left_Input {
+    width: 407px;
+    height: 80px;
+}
+
+.Description_Left_Input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.Savetask_Description_Right {
+    width: 163px;
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Description_Right_Text {
+    width: 61px;
+    height: 20px;
+}
+
+.Description_Right_Lists {
+    width: 163px;
+    height: 42px;
+}
+
+.Savetask_Status {
+    width: 586px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.Savetask_Button {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.Cancel {
+    width: 287px;
+    height: 44px;
+}
+
+.Cancel button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.Save {
+    width: 287px;
+    height: 44px;
+}
+
+.Save button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7F56D9;
+    color: white;
+}

@@ -3,6 +3,7 @@ import './Savetask.css'
 import GreenFlag from '../Icon/GreenFlag'
 import X from '../Icon/X'
 import { Select } from 'antd';
+import Task from '../Task/Task';
 const Savetask = (props) => {
 
   const HandleCancel = () => {
@@ -13,27 +14,33 @@ const Savetask = (props) => {
   const [description, setdescription] = useState('')
   const [assignedName, setassignedName] = useState('')
   const [statusId, setstatusId] = useState('')
-  const [endDate, setendDate] = useState('')
+  const [endDate, setendDate] = useState(null)
+  const [idEdit, setidEdit] = useState(null)
   //
-  const handleSave = () => {
+  const handleSaveorUpdate = () => {
 
     const new_task = {
-      taskId: Math.floor(Math.random() * 10000000),
       title: title,
       description: description,
       assignedName: assignedName,
       statusId: statusId,
       endDate: endDate,
-      
+      taskId: Date.now(),
       ///
-
     }
-
-    props.addTask(new_task) // gọi hàm addTask từ props truyền vào và truyền dữ liệu công việc mới
-    props.setFound(false) //
-
+    if (idEdit == null) {
+      props.addTask(new_task) // gọi hàm addTask từ props truyền vào và truyền dữ liệu công việc mới
+    }
+    else{
+      const update = ((t) => {
+        t.taskId === idEdit ? {taskId: idEdit, title: title, description: description, assignedName: assignedName, statusId: statusId, endDate: endDate} : t
+      })
+      props.setTasks(update)
+      setidEdit(null)
+    }
+    props.setFound(false)
+    
   }
-
 
   return (
     <>
@@ -128,7 +135,7 @@ const Savetask = (props) => {
               <button onClick={HandleCancel} >Cancel</button>
             </div>
             <div className='Save'>
-              <button onClick={handleSave}>Save</button>
+              <button onClick={handleSaveorUpdate}>Save</button>
             </div>
           </div>
         </div>

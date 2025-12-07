@@ -1,9 +1,10 @@
 import React from 'react'
 
 const X = (props) => {
- const handleOnClick = ( ) => {
-    props.setFound(false)
- }
+    const handleOnClick = () => {
+        props.setopenEditTask(false)
+    }
+
 
     return (
         <div onClick={handleOnClick}>
